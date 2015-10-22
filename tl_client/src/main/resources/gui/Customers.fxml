@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.TableColumn?>
+
+<HBox styleClass="container" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="at.ac.tuwien.inso.tl.client.gui.controller.CustomersController">
+	<children>
+		<VBox spacing="10" HBox.hgrow="ALWAYS">
+			<children>
+				<Label text="%label_customers" styleClass="h2" />
+				<HBox spacing="10">
+					<children>
+						<TextField fx:id="searchTextField" HBox.hgrow="ALWAYS" promptText="%text_search" styleClass="textField" />
+						<Button onAction="#onNewButtonClick" text="%button_neu"/>
+					</children>
+				</HBox>
+				<TableView fx:id="customersTableView" style="-fx-focus-color: transparent;" VBox.vgrow="ALWAYS">
+					<columns>
+						<TableColumn text="Nr" fx:id="customerNumberColumn" />
+						<TableColumn text="%tableView_anrede" fx:id="sexColumn" />
+						<TableColumn text="%tableView_firstName" fx:id="firstnameColumn" />
+						<TableColumn text="%tableView_lastName" fx:id="lastnameColumn" />
+						<TableColumn text="%tableView_birthday" fx:id="dateOfBirthColumn" />
+						<TableColumn text="Email" fx:id="emailColumn" />
+						<TableColumn text="%tableView_telephone" fx:id="telephoneColumn" />
+						<TableColumn text="%tableView_bonusPoints" fx:id="pointsColumn" />
+					</columns>
+				</TableView>
+			</children>
+		</VBox>
+		
+		<VBox HBox.hgrow="ALWAYS" spacing="20">
+			<children>
+				<GridPane VBox.vgrow="ALWAYS" fx:id="formGridPane" hgap="5.0" vgap="5.0" maxHeight="Infinity">
+					<children>
+						<Label GridPane.columnIndex="0" GridPane.rowIndex="0" text="%label_customerNumber" />
+						<Label GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="customerNumberLabel" styleClass="textField" />
+						
+						<Label GridPane.columnIndex="0" GridPane.rowIndex="1" text="%label_firstName" />
+						<TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="firstnameTextField" styleClass="textField" />
+						
+						<Label GridPane.columnIndex="0" GridPane.rowIndex="2" text="%label_lastName" />
+						<TextField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="lastnameTextField" styleClass="textField" />
+						
+						<Label GridPane.columnIndex="0" GridPane.rowIndex="3" text="%label_anrede" />
+						<ComboBox GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="sexComboBox" />
+						
+						<Label GridPane.columnIndex="0" GridPane.rowIndex="4" text="%label_birthday" />
+						<TextField GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="dateofbirthTextField" styleClass="textField" />
+						
+						<Label GridPane.columnIndex="0" GridPane.rowIndex="5" text="Email:" />
+						<TextField GridPane.columnIndex="1" GridPane.rowIndex="5" fx:id="emailTextField" styleClass="textField" />
+						
+						<Label GridPane.columnIndex="0" GridPane.rowIndex="6" text="%label_telephone" />
+						<TextField GridPane.columnIndex="1" GridPane.rowIndex="6" fx:id="telephoneTextField" styleClass="textField" />
+						
+						<Label GridPane.columnIndex="0" GridPane.rowIndex="7" text="%tableView_bonusPoints" />
+						<Label GridPane.columnIndex="1" GridPane.rowIndex="7" fx:id="pointsTextField" />
+						
+						<Button GridPane.columnIndex="0" GridPane.rowIndex="8" fx:id="saveButton" onAction="#onSaveButtonClick" text="%button_save" />
+						<Hyperlink GridPane.columnIndex="1" GridPane.rowIndex="8" fx:id="cancelHyperlink" onAction="#onCancelButtonClick" text="%button_cancel" />
+					</children>
+					<rowConstraints>
+						<RowConstraints minHeight="25" />
+						<RowConstraints minHeight="25" />
+						<RowConstraints minHeight="25" />
+						<RowConstraints minHeight="25" />
+						<RowConstraints minHeight="25" />
+						<RowConstraints minHeight="25" />
+						<RowConstraints minHeight="25" />
+						<RowConstraints minHeight="25" />
+					</rowConstraints>
+				</GridPane>
+				
+				<VBox spacing="5" fx:id="reservationsAndOrdersVBox">
+					<Label text="Reservierungen:" />
+					<TableView VBox.vgrow="NEVER" fx:id="reservationsTableView" style="-fx-focus-color: transparent;" >
+						<columns>
+							<TableColumn text="Nr" fx:id="reservationNumberColumn" />
+						</columns>
+					</TableView>
+					
+					<Label text="Bestellungen:" />
+					<TableView VBox.vgrow="NEVER" fx:id="ordersTableView" style="-fx-focus-color: transparent;" >
+						<columns>
+							<TableColumn text="Nr" fx:id="orderNumberColumn" />
+							<TableColumn text="Datum" fx:id="orderDateColumn" />
+							<TableColumn text="Preis" fx:id="orderPriceColumn" />
+						</columns>
+					</TableView>
+				</VBox>
+			</children>
+		</VBox>
+	</children>
+</HBox>

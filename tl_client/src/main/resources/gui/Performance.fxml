@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<HBox spacing="20.0" styleClass="container" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="at.ac.tuwien.inso.tl.client.gui.controller.PerformanceController">
+	<VBox fx:id="leftVBox" spacing="20.0" style="-fx-alignment: top-center;" styleClass="left" HBox.hgrow="ALWAYS">
+		<Button onAction="#onSelectPerformanceButtonClick" styleClass="textField" text="%button_searchPerformance" />
+		<Label fx:id="selectedPerformanceLabel" styleClass="h3" text="" />
+	</VBox>
+
+	<VBox spacing="10.0" styleClass="right">
+		<HBox spacing="5.0">
+			<Button onAction="#onSelectReservationButtonClick" text="%button_searchReservation" />
+			<Button onAction="#onSelectOrderButtonClick" text="%button_searchPurchase" />
+			<Button onAction="#onNewShoppingBasketButtonClick" text="%button_newCart" />
+		</HBox>
+
+		<Label fx:id="selectedOrderReservationLabel" text="" />
+
+		<VBox fx:id="ticketsVBox" spacing="10.0" style="-fx-border-color: #999999;-fx-border-style: solid;-fx-border-width: 1 0 0 0;" />
+
+		<GridPane hgap="10.0" vgap="10.0">
+			<Label text="%label_customer" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+			<Button fx:id="selectedCustomerButton" onAction="#onSelectCustomerButtonClick" text="%button_searchPoints" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+			
+			<Button id="selectedCustomerButton" fx:id="selectedCustomerAnonymButton" onAction="#onSelectCustomerAnonymButtonClick" text="Anonym" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+			
+			<Label text="%label_bonusPoints" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+			<Label fx:id="pointsLabel" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+			<Label text="%label_total" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+			<Label fx:id="selectedPriceLabel" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+			
+			<Label text="%label_methodofpayment" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+			<ComboBox fx:id="methodOfPaymentComboBox" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+		</GridPane>
+
+		<Button fx:id="reserveButton" onAction="#onReserveButtonClick" text="%button_reserve" />
+		<Button fx:id="orderButton" minHeight="16.0" onAction="#onOrderButtonClick" text="%button_purchase" />
+		<Button fx:id="saveButton" onAction="#onSaveButtonClick" text="%button_save" />
+		<Button fx:id="cancelButton" onAction="#onCancelButtonClick" text="%button_cancelOrder" />
+
+		<VBox id="merchandiseVBox" spacing="10.0">
+			<HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0">
+				<Label text="%label_availableArticles" />
+				<TextField fx:id="articleSearchTextField" styleClass="textField" />
+			</HBox>
+			
+			<TableView id="shopTableView" fx:id="articleTableView">
+				<columns>
+					<TableColumn text="Name" fx:id="articleNameColumn" />
+					<TableColumn text="%tableView_price" fx:id="articlePriceColumn" />
+					<TableColumn text="%tableView_description" fx:id="articleDescriptionColumn" />
+				</columns>
+			</TableView>
+			
+			<HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0">
+				<Label text="%label_pieces" />
+				<TextField fx:id="amountTextField" styleClass="textField" />
+				<Button onAction="#onSelectCartButtonClicked" text="%button_intoCart" />
+			</HBox>
+		</VBox>
+	</VBox>
+</HBox>

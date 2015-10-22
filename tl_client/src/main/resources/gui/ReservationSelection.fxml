@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox styleClass="container" spacing="20" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="at.ac.tuwien.inso.tl.client.gui.controller.ReservationSelectionController">
+	<children>
+		<Label text="%label_searchReservation" styleClass="h2" />
+		<TextField fx:id="searchTextField" promptText="%text_search" styleClass="textField" />
+		<TableView VBox.vgrow="ALWAYS" fx:id="reservationsTableView" style="-fx-focus-color: transparent;" >
+			<columns>
+				<TableColumn text="Nr" fx:id="reservationNumberColumn" />
+				<TableColumn text="%tableView_customer" fx:id="customerColumn" />
+			</columns>
+		</TableView>
+	</children>
+</VBox>

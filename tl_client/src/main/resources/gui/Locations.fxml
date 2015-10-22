@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<HBox styleClass="container" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="at.ac.tuwien.inso.tl.client.gui.controller.LocationsController">
+	<children>
+		<VBox spacing="10" HBox.hgrow="ALWAYS">
+			<children>
+				<Label text="%label_locations" styleClass="h2" />
+				<HBox spacing="10">
+					<children>
+						<TextField fx:id="searchTextField" HBox.hgrow="ALWAYS" promptText="%text_search" styleClass="textField" />
+					</children>
+				</HBox>
+				<TableView fx:id="locationsTableView" style="-fx-focus-color: transparent;" VBox.vgrow="ALWAYS">
+					<columns>
+						<TableColumn text="%tableView_title" fx:id="titleColumn" />
+						<TableColumn text="%tableView_street" fx:id="streetColumn" />
+						<TableColumn text="%tableView_postCode" fx:id="postcodeColumn" />
+						<TableColumn text="%tableView_city" fx:id="cityColumn" />
+						<TableColumn text="%tableView_country" fx:id="countryColumn" />
+					</columns>
+				</TableView>
+			</children>
+		</VBox>
+		<VBox fx:id="detailsVBox" spacing="10" HBox.hgrow="ALWAYS">
+			<children>
+				<GridPane hgap="5.0" vgap="5.0">
+					<columnConstraints>
+						<ColumnConstraints hgrow="NEVER" minWidth="100.0" />
+						<ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" />
+					</columnConstraints>
+					<children>
+						<Label text="%label_title" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+						<Label fx:id="titleLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+						<Label text="%label_description" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+						<Label fx:id="descriptionLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" wrapText="true" />
+						<Label text="%label_street" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+						<Label fx:id="streetLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+						<Label text="%label_postalCode" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+						<Label fx:id="postcodeLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+						<Label text="%label_city" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+						<Label fx:id="cityLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+						<Label text="%label_country" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+						<Label fx:id="countryLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+					</children>
+				</GridPane>
+				<Label text="%label_performances" />
+			</children>
+		</VBox>
+	</children>
+</HBox>

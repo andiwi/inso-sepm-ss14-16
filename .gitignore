@@ -1,0 +1,19 @@
+# ignore build target directories
+target/
+
+# ignore eclipse project settings directory and .classpath file
+# see http://stackoverflow.com/questions/4278601
+.settings/
+.classpath
+
+# ignore eclipse metadata
+.metadata/
+
+# ignore db files 
+tl_db/db/ticketlineDB.lck
+tl_db/db/ticketlineDB.log
+tl_db/db/ticketlineDB.properties
+tl_db/db/ticketlineDB.script
+
+# ignore *.class files
+*.class

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox styleClass="container" spacing="20" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="at.ac.tuwien.inso.tl.client.gui.controller.CustomerSelectionController">
+	<children>
+		<Label text="%label_customerSearch" styleClass="h2" />
+		<TextField fx:id="searchTextField" HBox.hgrow="ALWAYS" promptText="%text_search" styleClass="textField" />
+		<TableView fx:id="customersTableView" style="-fx-focus-color: transparent;" VBox.vgrow="ALWAYS">
+			<columns>
+				<TableColumn text="Nr" fx:id="customerNumberColumn" />
+				<TableColumn text="%tableView_anrede" fx:id="sexColumn" />
+				<TableColumn text="%tableView_firstName" fx:id="firstnameColumn" />
+				<TableColumn text="%tableView_lastName" fx:id="lastnameColumn" />
+				<TableColumn text="%tableView_birthday" fx:id="dateOfBirthColumn" />
+				<TableColumn text="Email" fx:id="emailColumn" />
+				<TableColumn text="%tableView_telephone" fx:id="telephoneColumn" />
+			</columns>
+		</TableView>
+	</children>
+</VBox>

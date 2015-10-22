@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<HBox styleClass="container" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="at.ac.tuwien.inso.tl.client.gui.controller.ShowsController">
+	<children>
+		<VBox spacing="10" HBox.hgrow="ALWAYS">
+			<children>
+				<Label text="%label_shows" styleClass="h2" />
+				<HBox spacing="10">
+					<children>
+						<TextField fx:id="searchTextField" HBox.hgrow="ALWAYS" promptText="%text_search" styleClass="textField" />
+					</children>
+				</HBox>
+				<TableView fx:id="showsTableView" style="-fx-focus-color: transparent;" VBox.vgrow="ALWAYS">
+					<columns>
+						<TableColumn text="%tableView_type" fx:id="showTypeColumn" />
+						<TableColumn text="%tableView_title" fx:id="titleColumn" />
+						<TableColumn text="%tableView_description" fx:id="descriptionColumn" />
+					</columns>
+				</TableView>
+			</children>
+		</VBox>
+		<VBox fx:id="detailsVBox" spacing="10" HBox.hgrow="ALWAYS">
+			<children>
+				<GridPane hgap="5.0" vgap="5.0">
+					<children>
+						<Label text="%label_title" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+						<Label fx:id="titleLabel" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+					</children>
+				</GridPane>
+				<Label text="%label_performances" />
+			</children>
+		</VBox>
+	</children>
+</HBox>

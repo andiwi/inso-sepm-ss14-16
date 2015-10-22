@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<HBox styleClass="container" spacing="20" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="at.ac.tuwien.inso.tl.client.gui.controller.ArtistsController">
+	<children>
+		<VBox spacing="10" HBox.hgrow="ALWAYS">
+			<children>
+				<Label text="%label_artist" styleClass="h2" />
+				<HBox spacing="10">
+					<children>
+						<TextField fx:id="searchTextField" HBox.hgrow="ALWAYS" promptText="%text_search" styleClass="textField" />
+					</children>
+				</HBox>
+				<TableView fx:id="artistsTableView" style="-fx-focus-color: transparent;" VBox.vgrow="ALWAYS">
+					<columns>
+						<TableColumn prefWidth="75.0" text="%tableView_firstName" fx:id="firstnameColumn" />
+						<TableColumn prefWidth="75.0" text="%tableView_lastName" fx:id="lastnameColumn" />
+						<TableColumn prefWidth="300.0" text="%tableView_biography" fx:id="descriptionColumn" />
+					</columns>
+				</TableView>
+			</children>
+		</VBox>
+		<VBox fx:id="detailsVBox" spacing="10" HBox.hgrow="ALWAYS">
+			<children>
+				<GridPane hgap="5.0" vgap="5.0">
+					<children>
+						<Label text="%label_firstName" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+						<Label fx:id="firstnameLabel" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+						<Label prefWidth="90.0" text="%label_lastName" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+						<Label fx:id="lastnameLabel" prefWidth="130.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+						<Label text="%label_biography" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+						<Hyperlink fx:id="descriptionLabel" onAction="#onBioClicked" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+					</children>
+				</GridPane>
+				
+				<Label text="%label_performances" />
+			</children>
+		</VBox>
+	</children>
+</HBox>
